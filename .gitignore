@@ -1,6 +1,7 @@
 # Editor directories and files
 .idea
 blog/__pycache__
+db.sqlite3
 
 #Frontend gitignore
 frontend/test/

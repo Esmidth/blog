@@ -1,2 +1,2 @@
-#Esmidth's Manual
+# Esmidth's Manual
 blog based on Django & Vue.js
