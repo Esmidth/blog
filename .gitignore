@@ -3,6 +3,10 @@
 blog/__pycache__
 db.sqlite3
 
+#Backend gitignore
+uploads/
+backend/migrations
+
 #Frontend gitignore
 frontend/test/
 frontend/node_modules/

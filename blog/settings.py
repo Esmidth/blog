@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'backend.apps.BackendConfig',
+    'backend.apps.BackendConfig',
     'corsheaders',
     'rest_framework',
-    'backend',
+    # 'backend',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +123,5 @@ CORS_ORIGIN_ALLOW_ALL = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = ''
