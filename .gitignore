@@ -1,3 +1,13 @@
-# Created by .ignore support plugin (hsz.mobi)
+# Editor directories and files
 .idea
-blog/__pycache__/
+blog/__pycache__
+
+#Frontend gitignore
+frontend/test/
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/selenium-debug.log
+frontend/test/unit/coverage/
+frontend/test/e2e/reports/
+
