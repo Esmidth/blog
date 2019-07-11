@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Author, Article, Image
+from .models import Author, Article, Image, Tag
 
 
 class AuthorSerializer(serializers.HyperlinkedModelSerializer):
@@ -18,3 +18,9 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Article
         fields = ('id', 'title', 'author', 'content', 'file')
+
+
+class TagSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ('id', 'tag_name')

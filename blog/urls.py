@@ -18,12 +18,13 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 
 from rest_framework import routers
-from backend.views import AuthorViewSet, ArticleViewSet, ImageViewSet
+from backend.views import AuthorViewSet, ArticleViewSet, ImageViewSet, TagViewSet
 
 routers = routers.DefaultRouter()
 routers.register(r'authors', AuthorViewSet)
 routers.register(r'articles', ArticleViewSet)
 routers.register(r'images', ImageViewSet)
+routers.register(r'tags', TagViewSet)
 
 urlpatterns = [
     path('api/', include(routers.urls)),

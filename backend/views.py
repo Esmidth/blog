@@ -1,13 +1,11 @@
 from django.shortcuts import render
-from .models import Author, Article, Image
-from .serializer import ArticleSerializer, AuthorSerializer, ImageSerializer
+from .models import Author, Article, Image, Tag
+from .serializer import ArticleSerializer, AuthorSerializer, ImageSerializer, TagSerializer
 
 from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-
-# Create your views here.
 
 class AuthorViewSet(viewsets.ModelViewSet):
     authentication_classes = (BasicAuthentication,)
@@ -28,3 +26,10 @@ class ImageViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
+
+
+class TagViewSet(viewsets.ModelViewSet):
+    authentication_classes = (BasicAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
