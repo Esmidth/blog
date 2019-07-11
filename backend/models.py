@@ -4,8 +4,6 @@ import uuid
 
 # Create your models here.
 
-# TODO: 先设计模型 Creating a model to work with
-
 class Author(models.Model):
     nickname = models.CharField(max_length=30, blank=False, default='Anonymous')
     avatar = models.ImageField(upload_to='./uploads/avatars/')
@@ -22,11 +20,19 @@ class Image(models.Model):
         return self.image.path
 
 
+class Tag(models.Model):
+    tag = models.CharField(max_length=50, blank=False, default='uncategorized')
+
+    def __str__(self):
+        return self.tag
+
+
 class Article(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=False, default='No title')
     # author = models.CharField(max_length=30, blank=False, default='Anonymous')
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     content = models.TextField()
     file = models.FileField(upload_to='./uploads/markdown/%Y')
 
