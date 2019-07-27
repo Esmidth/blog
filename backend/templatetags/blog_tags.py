@@ -17,6 +17,11 @@ def get_recent_posts(num=5):
 
 
 @register.simple_tag
+def get_index_articles(num=5):
+    return Article.objects.filter(is_show=True).order_by('-created_time')[:num]
+
+
+@register.simple_tag
 def get_archives():
     return Article.objects.filter(is_show=True).dates('created_time', 'month', order='DESC')
 

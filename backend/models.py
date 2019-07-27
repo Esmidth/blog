@@ -51,7 +51,7 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name=u'作者')
     tags = models.ForeignKey(Tag, on_delete=models.CASCADE, default=None, null=True, blank=True, verbose_name=u'标签')
     # content = models.TextField()
-    file = models.FileField(upload_to='./uploads/markdown/%Y', verbose_name=u'文件路径')
+    # file = models.FileField(upload_to='./uploads/markdown/%Y', verbose_name=u'文件路径')
     views = models.PositiveIntegerField(default=0, verbose_name=u'阅读数')
 
     is_top = models.BooleanField(default=False, verbose_name=u'顶置文章')

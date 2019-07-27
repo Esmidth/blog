@@ -79,7 +79,7 @@ class Index():
             md = MD()
             article_list[i].body = md.convert(article_list[i].body)
             article_list[i].toc = md.toc
-        return render(request, 'blog/index.html', context={'article_list': article_list})
+        return render(request, 'simp/head.html', context={'article_list': article_list})
 
     def Pagination(self, article_list, page: int):
         paginator = Paginator(article_list, self.per_page)
