@@ -68,7 +68,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:post', kwargs={'pk': self.pk})
+        return reverse('backend:articles', kwargs={'pk': self.pk})
 
     def increase_views(self):
         self.views += 1

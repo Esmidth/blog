@@ -77,7 +77,7 @@ class Index():
         article_list = self.Pagination(article_list=article_list, page=page)
         for i in range(len(article_list)):
             md = MD()
-            article_list[i].body = md.convert(article_list[i].body)
+            article_list[i].content = md.convert(article_list[i].content)
             article_list[i].toc = md.toc
         return render(request, 'simp/head.html', context={'article_list': article_list})
 
@@ -97,11 +97,11 @@ class Detail(View):
         article = get_object_or_404(Article, pk=pk)
 
         md = MD()
-        article.body = md.convert(article.body)
+        article.content = md.convert(article.content)
         article.toc = md.toc
 
         article.increase_views()
-        return render(request, 'blog/detail.html', context={'article': article})
+        return render(request, 'simp/article.html', context={'article': article})
 
     def post(self, request):
         pass

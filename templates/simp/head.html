@@ -68,7 +68,7 @@
         {% get_index_articles as articles %}
         {% for article in articles %}
             <li class="list-group-item title">
-                <a href="">{{ article.title }}</a>
+                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
             </li>
         {% endfor %}
 

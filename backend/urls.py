@@ -9,8 +9,7 @@ urlpatterns = [
     path('archives/', BlogViews.Archives, name='Archives'),
     path('about/', BlogViews.About, name='About'),
     path('project/', BlogViews.Project, name='Project'),
-    path('tag/<tag>/', BlogViews.Index().tags, name='tags'),
-    path('article/<int:pk>/', BlogViews.Detail.as_view, name='articles'),
+    path('tag/<tag>/', BlogViews.Index().tags, name='tag'),
+    path('article/<int:pk>/', BlogViews.Detail.as_view(), name='articles'),
     # path('content.json/',BlogViews.search
-
 ]
