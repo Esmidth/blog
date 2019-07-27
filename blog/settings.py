@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'backend.apps.BackendConfig',
     'corsheaders',
     'rest_framework',
+    'mdeditor',
     # 'backend',
 ]
 
