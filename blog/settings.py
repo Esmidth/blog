@@ -16,7 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "frontend/dist/static")
+    os.path.join(BASE_DIR, "frontend/dist/static"),
+    os.path.join(BASE_DIR, "frontend/dist/"),
+    os.path.join(BASE_DIR, "static/"),
+    os.path.join(BASE_DIR, 'templates/'),
 ]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -61,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        'DIRS': ['frontend/dist'],
+        'DIRS': ['frontend/dist', 'templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +128,21 @@ CORS_ORIGIN_ALLOW_ALL = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = ''
+
+SITE_CONFIGS = {
+    'Owner': 'Esmidth',
+    'Title': 'Esmidth\'s Manual',
+
+    'Footer': {
+        'Email': 'esmidth@163.com',
+        'Github': 'http://github.com/esmidth',
+    },
+
+    # gitalk config https://www.jianshu.com/p/78c64d07124d
+    'Gitalk': {
+        'clientID': '',
+    },
+
+    'BaiduTj': '',
+
+}
