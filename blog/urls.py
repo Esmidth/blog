@@ -28,10 +28,13 @@ routers.register(r'tags', TagViewSet)
 
 urlpatterns = [
     path('api/', include(routers.urls)),
-    path('', TemplateView.as_view(template_name="index.html")),
+    # path('', TemplateView.as_view(template_name="index.html")),
     path('admin/', admin.site.urls),
-    path('hexo/', TemplateView.as_view(template_name="static_hexo.html")),
-    path('blog/', TemplateView.as_view(template_name='static_blog.html')),
-    path('vue/', TemplateView.as_view(template_name='hello_vue.html')),
+    # path('hexo/', TemplateView.as_view(template_name="static_hexo.html")),
+    # path('blog/', TemplateView.as_view(template_name='static_blog.html')),
+    # path('vue/', TemplateView.as_view(template_name='hello_vue.html')),
     path('index/', TemplateView.as_view(template_name='base.html')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('mdeditor/', include('mdeditor.urls')),
+    path('blog/', include('backend.urls'))
 ]

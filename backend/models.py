@@ -57,6 +57,13 @@ class Article(models.Model):
     is_top = models.BooleanField(default=False, verbose_name=u'顶置文章')
     is_show = models.BooleanField(default=True, verbose_name=u'发布状态')
 
+    post_type = models.CharField(max_length=20,
+                                 choices=(('post', u'博客文章'),
+                                          ('about', u'关于页面'),
+                                          ('project', u'我的项目')),
+                                 default='post',
+                                 verbose_name=u'类型')
+
     def __str__(self):
         return self.title
 
