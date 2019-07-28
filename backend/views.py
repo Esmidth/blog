@@ -79,7 +79,7 @@ class Index():
             md = MD()
             article_list[i].content = md.convert(article_list[i].content)
             article_list[i].toc = md.toc
-        return render(request, 'simp/head.html', context={'article_list': article_list})
+        return render(request, 'simp/index.html', context={'article_list': article_list})
 
     def Pagination(self, article_list, page: int):
         paginator = Paginator(article_list, self.per_page)
@@ -117,10 +117,10 @@ def About(request):
     article = Article.objects.filter(post_type='about').first()
     if article:
         md = MD()
-        article.body = md.convert(article.body)
+        article.content = md.convert(article.content)
         article.doc = md.toc
         article.increase_views()
-        return render(request, 'blog/about.html', context={'article': article})
+        return render(request, 'simp/about_me.html', context={'article': article})
     else:
         return render(request, '404.html')
 

@@ -34,7 +34,7 @@ urlpatterns = [
     # path('blog/', TemplateView.as_view(template_name='static_blog.html')),
     # path('vue/', TemplateView.as_view(template_name='hello_vue.html')),
     # path('index/', TemplateView.as_view(template_name='base.html')),
-    # path('', TemplateView.as_view(template_name='simp/head.html'), name='home'),
+    # path('', TemplateView.as_view(template_name='simp/index.html'), name='home'),
     path('', include('backend.urls'), name='blog'),
     # path('mdeditor/', include('mdeditor.urls')),
     # path('blog/', include('backend.urls'))
