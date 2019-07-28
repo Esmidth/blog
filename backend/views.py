@@ -11,11 +11,12 @@ from django.views import View
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.db.models.aggregates import Count
-import json, re
 from django.http import HttpResponse
-import markdown
 from django.utils.text import slugify
+from django.http import FileResponse
 from markdown.extensions.toc import TocExtension
+import markdown
+import json, re
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
@@ -135,3 +136,22 @@ def Project(request):
         return render(request, 'blog/project.html', context={'article': article})
     else:
         return render(request, '404.html')
+
+
+def download_img(request):
+    file = open('./uploads/images/2019/adder.png', 'rb')
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="adder.png"'
+    return response
+
+
+class ImageTool:
+    @staticmethod
+    def get_new_random_file_name(file_name):
+        find_type = False
+        for c in file_name:
+            if c == '.':
+                find_type = True
+        if find_type:
+            type = file_name.split('.')[-1]

@@ -11,5 +11,6 @@ urlpatterns = [
     path('project/', BlogViews.Project, name='Project'),
     path('tag/<tag>/', BlogViews.Index().tags, name='tag'),
     path('article/<int:pk>/', BlogViews.Detail.as_view(), name='articles'),
+    path('img/', BlogViews.download_img)
     # path('content.json/',BlogViews.search
 ]
