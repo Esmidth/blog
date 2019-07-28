@@ -27,5 +27,5 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created_time', 'modified_time', 'content', 'author', 'tags', 'views', 'is_top',
+    list_display = ['title', 'created_time', 'modified_time', 'author', 'tags', 'views', 'is_top',
                     'is_show', 'post_type']
