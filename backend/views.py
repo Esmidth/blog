@@ -51,6 +51,7 @@ def MD():
     return markdown.Markdown(extensions=[
         'markdown.extensions.extra',
         'markdown.extensions.codehilite',
+        'markdown.extensions.admonition',
         TocExtension(slugify=slugify)
     ])
 
