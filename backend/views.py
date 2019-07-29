@@ -122,9 +122,9 @@ def About(request):
         article.content = md.convert(article.content)
         article.doc = md.toc
         article.increase_views()
-        return render(request, 'simp/about_me.html', context={'article': article})
+        return render(request, 'simp/article.html', context={'article': article})
     else:
-        return render(request, '404.html')
+        return render(request, 'simp/error.html')
 
 
 def Project(request):
@@ -136,7 +136,7 @@ def Project(request):
         article.increase_views()
         return render(request, 'blog/project.html', context={'article': article})
     else:
-        return render(request, '404.html')
+        return render(request, 'error.html')
 
 
 def download_img(request):
