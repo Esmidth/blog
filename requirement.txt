@@ -14,3 +14,9 @@ s-tui==0.8.3
 SecretStorage==2.3.1
 six==1.11.0
 urwid==2.0.1
+django==2.2.3
+Pillow==6.1.0
+djangorestframework==3.10.2
+django-cors-headers==3.0.2
+django-mdeditor==0.1.16
+markdown==3.1.1
