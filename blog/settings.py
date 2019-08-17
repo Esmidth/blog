@@ -16,8 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "frontend/dist/static"),
-    os.path.join(BASE_DIR, "frontend/dist/"),
+    # os.path.join(BASE_DIR, "frontend/dist/static"),
+    # os.path.join(BASE_DIR, "frontend/dist/"),
     os.path.join(BASE_DIR, "static/"),
     os.path.join(BASE_DIR, 'templates/'),
 ]
@@ -30,7 +30,7 @@ SECRET_KEY = 'mi@7kc0^vp*q#^%-b_i#ii&joy3kageyq=65v6v*0ztgqzz-&m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.esmidthpace.cf']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
