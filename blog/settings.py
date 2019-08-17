@@ -15,12 +15,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATICFILES_DIRS = [
+# STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "frontend/dist/static"),
     # os.path.join(BASE_DIR, "frontend/dist/"),
-    os.path.join(BASE_DIR, "static/"),
-    os.path.join(BASE_DIR, 'templates/'),
-]
+    # os.path.join(BASE_DIR, "static/"),
+    # os.path.join(BASE_DIR, 'templates/'),
+# ]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -28,7 +28,7 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'mi@7kc0^vp*q#^%-b_i#ii&joy3kageyq=65v6v*0ztgqzz-&m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
