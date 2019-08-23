@@ -56,7 +56,7 @@ def MD():
     ])
 
 
-class Index():
+class Index:
     def __init__(self):
         self.per_page = 10
 
@@ -81,7 +81,7 @@ class Index():
             md = MD()
             article_list[i].content = md.convert(article_list[i].content)
             article_list[i].toc = md.toc
-        return render(request, 'simp/index.html', context={'article_list': article_list})
+        return render(request, '../templates/index.html', context={'article_list': article_list})
 
     def Pagination(self, article_list, page: int):
         paginator = Paginator(article_list, self.per_page)
@@ -97,13 +97,15 @@ class Index():
 class Detail(View):
     def get(self, request, pk):
         article = get_object_or_404(Article, pk=pk)
+        if not article.is_show:
+            return render(request, '../templates/error.html')
 
         md = MD()
         article.content = md.convert(article.content)
         article.toc = md.toc
 
         article.increase_views()
-        return render(request, 'simp/article.html', context={'article': article})
+        return render(request, '../templates/article.html', context={'article': article})
 
     def post(self, request):
         pass
@@ -122,9 +124,9 @@ def About(request):
         article.content = md.convert(article.content)
         article.doc = md.toc
         article.increase_views()
-        return render(request, 'simp/article.html', context={'article': article})
+        return render(request, '../templates/article.html', context={'article': article})
     else:
-        return render(request, 'simp/error.html')
+        return render(request, '../templates/error.html')
 
 
 def Project(request):

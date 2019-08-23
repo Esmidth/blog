@@ -1,9 +1,10 @@
 TODO:
 2.html模板中增加文章发布状态和顶置状态的判断
-3.python django项目的部署
 4.对整个项目搭建方式的总结
 5.重构
+6.detail增加权限，如果发布状态不对，直接拒绝访问
 99.markdown转html后，语法高亮修复
 99.markdown插入图片的问题
 99.About Me页面完善
 99.网站的logo(临时替换)
+99.python django项目的部署
