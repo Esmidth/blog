@@ -17,8 +17,8 @@ def get_recent_posts(num=5):
 
 
 @register.simple_tag
-def get_index_articles(num=5):
-    return Article.objects.filter(is_show=True).order_by('-created_time')[:num]
+def get_index_articles():
+    return Article.objects.filter(is_show=True).order_by('-created_time')
 
 
 @register.simple_tag
